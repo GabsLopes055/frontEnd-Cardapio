@@ -1,0 +1,36 @@
+<div class="header">
+    <h1 mat-dialog-title>Adicionar</h1>
+</div>
+<mat-divider></mat-divider>
+<div class="content">
+    <form [formGroup]="formCreate">
+        <h3>Informe um titulo para o produto</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="Informe um titulo" formControlName="title" required>
+            <mat-icon matSuffix>toc</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+        <h3>Informe o preço</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Preço</mat-label>
+            <input type="number" matInput placeholder="Preço" formControlName="price" required>
+            <mat-icon matSuffix>payments</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+        <h3>Link para imagem</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Imagem</mat-label>
+            <input matInput placeholder="Imagem" formControlName="image" required>
+            <mat-icon matSuffix>image</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+    <div class="footer">
+        <button mat-stroked-button color="warn" (click)="cancelar()">Cancelar</button>
+        <button mat-raised-button color="primary" [disabled]="!formCreate.valid" (click)="creatNewFood()">Salvar</button>
+    </div>
+</mat-dialog-actions>

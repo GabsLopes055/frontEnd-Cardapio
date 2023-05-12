@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+.content {
+    align-items: center;
+}
+
+form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    justify-content: center;
+    padding-top: 6px;
+}
