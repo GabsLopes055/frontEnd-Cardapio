@@ -1,8 +1,8 @@
 import { Component, Pipe } from '@angular/core';
-import { FoodServiceService } from './food-service.service';
-import { food } from './Foodmodel.model';
+import { FoodServiceService } from './Cardapio/food/food-service.service';
+import { food } from './Cardapio/food/Foodmodel.model';
 import { MatDialog } from '@angular/material/dialog';
-import { AdicionarFoodComponent } from './adicionarFood/adicionar-food/adicionar-food.component';
+import { AdicionarFoodComponent } from './Cardapio/food/created-food/adicionar-food.component';
 
 @Component({
   selector: 'app-root',

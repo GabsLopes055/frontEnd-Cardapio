@@ -1,6 +1,7 @@
 export interface food{
     cdFood: number
-    title: string, 
+    title: string,
     image: string,
-    price: number
+    price: number,
+    category: number
 }

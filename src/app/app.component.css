@@ -1,9 +1,14 @@
+mat-sidenav-container {
+    height: 100%;
+}
+
 mat-toolbar {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 .containerToolbar {
     margin: 0;
     padding: 0;
@@ -13,52 +18,8 @@ mat-toolbar {
     justify-content: space-between;
 }
 
-
 .menu {
     display: flex;
-    align-items: center;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-}
-
-.title>h1 {
-    font-size: 30px;
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
-    /* justify-content: center; */
-    /* flex-wrap: wrap; */
-    
-    /* margin: 0;
-    padding: 0; */
-}
-
-.content{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* height: 100%; */
-}
-
-mat-divider {
-    margin: 10px;
-    /* width: 100%; */
-}
-
-mat-card {
-    margin: 30px;
-    width: auto;
-    height: auto;
-    text-align: center;
     align-items: center;
 }
 
@@ -66,59 +27,40 @@ mat-card {
     font-size: 40px;
 }
 
-.titleToolbar > mat-icon {
-    
+.titleToolbar>mat-icon {
     width: auto;
     height: auto;
 }
 
-p {
-    padding-top: 5px;
-}
-
-img {
-    margin: 20px;
-    width: 300px;
-    height: 300px;
-    border-radius: 15px;
-}
-
-mat-sidenav{ 
+mat-sidenav {
     height: 100%;
     width: 30%;
     text-align: center;
 }
-mat-sidenav-container {    
-    height: 100%;
-}
 
 .sidenav {
     align-items: center;
-    margin: 250px 30px 0px 0px ;
+    margin: 50px 30px 0px 0px;
     /* margin: 20% 30px 50% 30px; */
 }
 
-.sidenavCadastrar > button {
-    margin: 10px;
-    width: 100%;
-}
-.sidenavLogar > button {
+.sidenavCadastrar>button {
     margin: 10px;
     width: 100%;
 }
 
-.fecharSidenav {
+.sidenavLogar>button {
     margin: 10px;
     width: 100%;
 }
 
-mat-grid-list {
-    margin: 0;
-    padding: 0;
-}
+
+/* .fecharSidenav {
+    margin: 10px;
+    width: 100%;
+} */
 
 a {
     text-decoration: none;
     color: black;
 }
-

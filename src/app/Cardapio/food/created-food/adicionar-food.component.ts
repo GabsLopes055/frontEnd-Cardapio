@@ -2,7 +2,7 @@ import { group } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { FoodServiceService } from 'src/app/food-service.service';
+import { FoodServiceService } from 'src/app/Cardapio/food/food-service.service';
 
 @Component({
   selector: 'app-adicionar-food',
@@ -26,7 +26,7 @@ export class AdicionarFoodComponent {
   creatNewFood(){
     this.service.createFood(this.formCreate.value).subscribe(() => {
       this.dialog.closeAll()
-      window.location.reload()      
+      window.location.reload()
       this.service.showMessage('Criado com Sucesso')
     })
   }

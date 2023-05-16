@@ -1,0 +1,26 @@
+<div class="title">
+    <h1>Cardápio do Dia</h1>
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    <div class="content">
+        <mat-card *ngFor="let foods of food">
+            <mat-card-header>
+                <mat-card-title>
+                    {{ foods.title }}
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{ foods.image }}" class="mat-elevation-z8" />
+            <mat-divider></mat-divider>
+            <p><strong>Valor: </strong> {{ foods.price | currency : "BRL" }}</p>
+        </mat-card>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="title">
+    <h1>Entrada</h1>
+</div>
+<mat-divider></mat-divider>
+<div class="title">
+    <h1>Pratos Principais</h1>
+</div>

@@ -1,70 +1,69 @@
 <mat-sidenav-container>
-
-  <mat-toolbar color="primary">
-    <div class="containerToolbar">
-      <div class="menu">
-        <button mat-icon-button (click)="sidenav.open()"><mat-icon>menu</mat-icon></button><span>Menu</span>
-      </div>
-      <div class="titleToolbar"><mat-icon>restaurant</mat-icon> | <mat-icon>lunch_dining</mat-icon></div>
-      <div class="adicionar">
-        <div class="menu">
-          <button (click)="openDialog()" mat-icon-button><mat-icon>add</mat-icon></button><span>Adicionar</span>
+    <mat-toolbar color="primary">
+        <div class="containerToolbar">
+            <div class="menu">
+                <button mat-icon-button (click)="sidenav.open()"><mat-icon>menu</mat-icon></button><span>Menu</span>
+            </div>
+            <div class="titleToolbar">
+                <mat-icon>restaurant</mat-icon> |
+                <mat-icon>lunch_dining</mat-icon>
+            </div>
+            <div class="adicionar">
+                <div class="menu">
+                    <button (click)="openDialog()" mat-icon-button><mat-icon>add</mat-icon></button><span>Adicionar</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </mat-toolbar>
+    </mat-toolbar>
 
-  <mat-sidenav #sidenav mode="over">
+    <mat-sidenav #sidenav mode="over">
+        <div class="sidenav">
+            <mat-list>
+                <h2>Menu</h2>
+                <button mat-stroked-button color="warn" class="fecharSidenav" (click)="sidenav.close()"><mat-icon>close</mat-icon></button>
+            </mat-list>
+            <mat-list>
+                <a href="#">
+                    <h2>Cardápio do Dia</h2>
+                </a>
+            </mat-list>
+            <mat-list>
+                <a href="#">
+                    <h2>Entradas</h2>
+                </a>
+            </mat-list>
+            <mat-list>
+                <a href="#">
+                    <h2>Pratos Principais</h2>
+                </a>
+            </mat-list>
+            <mat-list>
+                <a href="#">
+                    <h2>Drinks</h2>
+                </a>
+            </mat-list>
+            <mat-list>
+                <a href="#">
+                    <h2>Bebidas</h2>
+                </a>
+            </mat-list>
 
-    <div class="sidenav">
-      <mat-divider></mat-divider>
-      <mat-list><a href="#">Cardápio do Dia</a></mat-list>
-      <mat-list><a href="#">Entradas</a></mat-list>
-      <mat-list><a href="#">Pratos Principais</a></mat-list>
-      <mat-list><a href="#">Drinks</a></mat-list>
-      <mat-list><a href="#">Bebidas</a></mat-list>
-      <mat-divider></mat-divider>
 
-      <div class="actions">
+            <div class="actions">
 
-        <div class="sidenavCadastrar">
-          <button mat-stroked-button color="warn"><mat-icon>how_to_reg</mat-icon> Cadastrar-se</button>
+                <div class="sidenavCadastrar">
+                    <button mat-stroked-button color="warn"><mat-icon>how_to_reg</mat-icon> Cadastrar-se</button>
+                </div>
+
+                <div class="sidenavCadastrar">
+                    <button mat-raised-button color="primary"> <mat-icon class="mat-18">person</mat-icon> Logar</button>
+                </div>
+
+            </div>
+
+
         </div>
-
-        <div class="sidenavCadastrar">
-          <button mat-raised-button color="primary"> <mat-icon class="mat-18">person</mat-icon> Logar</button>
-        </div>
-
-      </div>
-
-      <button mat-stroked-button color="accent" class="fecharSidenav"
-        (click)="sidenav.close()"><mat-icon>close</mat-icon> Fechar</button>
-    </div>
-  </mat-sidenav>
-  <div class="title">
-    <h1>Cardápio do Dia</h1>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="container">
-    <div class="content">
-      <mat-card *ngFor="let foods of food" (click)="editarFood(foods)">
-        <mat-card-header>
-          <mat-card-title>
-            {{ foods.title }}
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{ foods.image }}" class="mat-elevation-z8" />
-        <mat-divider></mat-divider>
-        <p><strong>Valor: </strong> {{ foods.price | currency : "BRL" }}</p>
-      </mat-card>
-    </div>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="title">
-    <h1>Entrada</h1>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="title">
-    <h1>Pratos Principais</h1>
-  </div>
+    </mat-sidenav>
+    <app-main-food></app-main-food>
 </mat-sidenav-container>
+<router-outlet></router-outlet>

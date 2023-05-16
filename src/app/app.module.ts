@@ -16,10 +16,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatListModule} from '@angular/material/list';
-import { AdicionarFoodComponent } from './adicionarFood/adicionar-food/adicionar-food.component';
-import { ObjToArrayPipe } from './obj-to-array.pipe';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { AdicionarFoodComponent } from './Cardapio/food/created-food/adicionar-food.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MainFoodComponent } from './Cardapio/food/main-food/main-food.component';
 
 
 
@@ -27,7 +27,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
   declarations: [
     AdicionarFoodComponent,
     AppComponent,
-    ObjToArrayPipe
+    MainFoodComponent,
   ],
   imports: [
     BrowserModule,
