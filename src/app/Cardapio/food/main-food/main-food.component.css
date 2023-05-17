@@ -4,8 +4,13 @@
     padding-top: 20px;
 }
 
-mat-divider {
-    width: 50%;
+.divider {
+    display: flex;
+    justify-content: center;
+}
+
+.divider>mat-divider {
+    width: 80%;
 }
 
 .container {

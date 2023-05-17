@@ -9,6 +9,7 @@
                 <mat-icon>lunch_dining</mat-icon>
             </div>
             <div class="adicionar">
+
                 <div class="menu">
                     <button (click)="openDialog()" mat-icon-button><mat-icon>add</mat-icon></button><span>Adicionar</span>
                 </div>
@@ -18,50 +19,24 @@
 
     <mat-sidenav #sidenav mode="over">
         <div class="sidenav">
-            <mat-list>
-                <h2>Menu</h2>
-                <button mat-stroked-button color="warn" class="fecharSidenav" (click)="sidenav.close()"><mat-icon>close</mat-icon></button>
+            <mat-list class="sidenav-menu-fechar">
+                <button mat-icon-button color="warn" class="fecharSidenav" (click)="sidenav.close()"><mat-icon>close</mat-icon></button>
             </mat-list>
-            <mat-list>
+            <mat-list *ngFor="let categories of category">
                 <a href="#">
-                    <h2>Cardápio do Dia</h2>
+                    <h2>{{categories.category}}</h2>
                 </a>
             </mat-list>
-            <mat-list>
-                <a href="#">
-                    <h2>Entradas</h2>
-                </a>
-            </mat-list>
-            <mat-list>
-                <a href="#">
-                    <h2>Pratos Principais</h2>
-                </a>
-            </mat-list>
-            <mat-list>
-                <a href="#">
-                    <h2>Drinks</h2>
-                </a>
-            </mat-list>
-            <mat-list>
-                <a href="#">
-                    <h2>Bebidas</h2>
-                </a>
-            </mat-list>
-
 
             <div class="actions">
-
-                <div class="sidenavCadastrar">
-                    <button mat-stroked-button color="warn"><mat-icon>how_to_reg</mat-icon> Cadastrar-se</button>
-                </div>
-
+                <!-- <div class="sidenavCadastrar">
+                    <button mat-raised-button color="primary"><mat-icon>category</mat-icon>Cadastrar Categoria</button>
+                </div> -->
+                <!--
                 <div class="sidenavCadastrar">
                     <button mat-raised-button color="primary"> <mat-icon class="mat-18">person</mat-icon> Logar</button>
-                </div>
-
+                </div> -->
             </div>
-
-
         </div>
     </mat-sidenav>
     <app-main-food></app-main-food>

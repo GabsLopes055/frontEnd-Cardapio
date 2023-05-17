@@ -20,7 +20,8 @@ import { MatListModule } from '@angular/material/list';
 import { AdicionarFoodComponent } from './Cardapio/food/created-food/adicionar-food.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MainFoodComponent } from './Cardapio/food/main-food/main-food.component';
-
+import { CreatedCategoryComponent } from './Cardapio/category/created-category/created-category.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MainFoodComponent } from './Cardapio/food/main-food/main-food.component
     AdicionarFoodComponent,
     AppComponent,
     MainFoodComponent,
+    CreatedCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { MainFoodComponent } from './Cardapio/food/main-food/main-food.component
     MatDialogModule,
     ReactiveFormsModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSelectModule
   ],
   providers: [
   ],

@@ -25,7 +25,17 @@
             <mat-icon matSuffix>image</mat-icon>
             <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
         </mat-form-field>
-
+        <h3>Selecione a Categoria</h3>
+        <mat-form-field appearance="outline" required>
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="cdCategory" required>
+                <mat-option *ngFor="let categories of category" [value]="categories.cdCategory">
+                    {{categories.category}}
+                </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>category</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
     </form>
 </div>
 <mat-divider></mat-divider>
