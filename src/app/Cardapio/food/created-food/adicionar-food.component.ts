@@ -1,9 +1,9 @@
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { CategoryServiceService } from './../../category/category-service.service';
 import { category } from './../../category/category-model.model';
 import { group } from '@angular/animations';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { Component, Pipe } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl, FormArray } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { FoodServiceService } from 'src/app/Cardapio/food/food-service.service';
 
@@ -16,21 +16,15 @@ export class AdicionarFoodComponent {
 
   formCreate!: FormGroup;
   category!: category[];
-  cdCategory = [];
 
-  constructor(private dialog: MatDialog, private fb: FormBuilder, private serviceFood: FoodServiceService, private serviceCategory: CategoryServiceService) { }
-
-  ngOnInit() {
+  constructor(private dialog: MatDialog, private formBuilder: FormBuilder, private serviceFood: FoodServiceService, private serviceCategory: CategoryServiceService) {
     this.listCategory();
-    this.formCreate = this.fb.group({
-      title: ['', Validators.required],
-      price: ['', Validators.required],
-      image: ['', Validators.required],
-      cdCategory: new FormBuilder().array([
-        this.fb.group({
-          cdCategory: new FormControl()
-        })
-      ])
+
+    this.formCreate = this.formBuilder.group({
+      title: this.formBuilder.control('', Validators.required),
+      price: this.formBuilder.control('', Validators.required),
+      image: this.formBuilder.control('', Validators.required),
+      cdCategory: this.formBuilder.control('', Validators.required)
     })
   }
 
@@ -42,26 +36,17 @@ export class AdicionarFoodComponent {
 
   creatNewFood() {
 
+    let cdCategory = { "cdCategory": this.formCreate.get('cdCategory')?.value }
+
+    this.formCreate.controls['cdCategory'].setValue(cdCategory)
+
     console.log(this.formCreate.value)
 
-    this.cdCategory = this.formCreate.controls['cdCategory'].value
-
-    this.formCreate.controls['cdCategory'].setValue(this.cdCategory)
-
-    // this.cdCategory = this.cdCategory.map(() => {
-    //   return {
-    //     cdCategory: this.formCreate.controls['cdCategory'].value()
-    //   }
-    // })
-
-    console.log(this.formCreate.controls['cdCategory']);
-
-    console.log(this.cdCategory)
-    // this.serviceFood.createFood(this.formCreate.value).subscribe(() => {
-    //   this.dialog.closeAll()
-    //   window.location.reload()
-    //   this.serviceFood.showMessage('Criado com Sucesso')
-    // })
+    this.serviceFood.createFood(this.formCreate.value).subscribe(() => {
+      this.dialog.closeAll()
+      window.location.reload()
+      this.serviceFood.showMessage('Criado com Sucesso')
+    })
   }
 
 

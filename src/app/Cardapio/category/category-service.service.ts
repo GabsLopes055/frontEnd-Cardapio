@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, map, catchError, EMPTY } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,6 +15,28 @@ export class CategoryServiceService {
 
   public listAllCategory(): Observable<category[]> {
     return this.http.get<category[]>(this.url);
+  }
+
+  public addCategory(category: category): Observable<category> {
+    return this.http.post<category>(this.url, category).pipe(
+      map((obj) => {
+        obj
+      }),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  public showMessage(message: string) {
+    this.message.open(message, 'X', {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top'
+    })
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage('Erro interno !')
+    return EMPTY;
   }
 
 }

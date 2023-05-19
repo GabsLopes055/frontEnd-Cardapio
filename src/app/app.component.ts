@@ -17,6 +17,7 @@ export class AppComponent {
 
   food!: food[];
   category!: category[];
+  newCategories = []
 
   constructor(private serviceFood: FoodServiceService, private serviceCategory: CategoryServiceService, private dialog: MatDialog) {}
 
@@ -26,7 +27,9 @@ export class AppComponent {
     });
     this.serviceCategory.listAllCategory().subscribe(category => {
       this.category = category
+      console.log(category)
     })
+    // console.log(this.category)
   }
 
   openDialog() {

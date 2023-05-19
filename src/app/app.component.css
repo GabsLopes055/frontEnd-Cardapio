@@ -16,13 +16,12 @@ mat-toolbar {
     display: flex;
     width: 55%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .menu {
     display: flex;
     align-items: center;
-    /* padding-right: 30px; */
 }
 
 .titleToolbar {
