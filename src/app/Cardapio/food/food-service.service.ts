@@ -34,7 +34,7 @@ export class FoodServiceService {
   }
 
   public listAllFood(): Observable<food[]> {
-    return this.http.get<food[]>(this.url);
+    return this.http.get<any>(this.url);
   }
 
 

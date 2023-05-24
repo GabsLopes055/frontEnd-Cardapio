@@ -1,7 +1,22 @@
-.title {
+.container {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding-top: 20px;
+    position: relative;
+}
+
+.title {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .divider {
@@ -11,32 +26,18 @@
 
 .divider>mat-divider {
     width: 80%;
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.content {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* height: 100%; */
+    margin: 10px;
 }
 
 mat-card {
-    margin: 30px;
-    width: auto;
-    height: auto;
+    margin: 15px;
+    padding: 0;
     text-align: center;
     align-items: center;
 }
 
 mat-card>img {
-    margin: 20px;
+    /* margin: 30px; */
     width: 300px;
     height: 300px;
     border-radius: 15px;

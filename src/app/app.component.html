@@ -23,17 +23,17 @@
                 <button mat-icon-button color="warn" class="fecharSidenav" (click)="sidenav.close()"><mat-icon>close</mat-icon></button>
             </mat-list>
             <mat-list *ngFor="let categories of category">
-                <a href="#">
+                <a href="#{{categories.category}}" (click)="sidenav.close()">
                     <h2>{{categories.category}}</h2>
                 </a>
             </mat-list>
 
             <div class="actions">
-                <!-- <div class="sidenavCadastrar">
-                    <button mat-raised-button color="primary"><mat-icon>category</mat-icon>Cadastrar Categoria</button>
-                </div> -->
-                <!--
                 <div class="sidenavCadastrar">
+                    <button mat-raised-button color="primary"><mat-icon>category</mat-icon>Cadastrar Categoria</button>
+                </div>
+
+                <!-- <div class="sidenavCadastrar">
                     <button mat-raised-button color="primary"> <mat-icon class="mat-18">person</mat-icon> Logar</button>
                 </div> -->
             </div>

@@ -14,7 +14,7 @@ export class CategoryServiceService {
   url = "http://localhost:8080/category"
 
   public listAllCategory(): Observable<category[]> {
-    return this.http.get<category[]>(this.url);
+    return this.http.get<category[]>(this.url)
   }
 
   public addCategory(category: category): Observable<category> {

@@ -5,7 +5,6 @@ import { FoodServiceService } from './Cardapio/food/food-service.service';
 import { food } from './Cardapio/food/Foodmodel.model';
 import { MatDialog } from '@angular/material/dialog';
 import { AdicionarFoodComponent } from './Cardapio/food/created-food/adicionar-food.component';
-import { TitleStrategy } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,17 +18,20 @@ export class AppComponent {
   category!: category[];
   newCategories = []
 
-  constructor(private serviceFood: FoodServiceService, private serviceCategory: CategoryServiceService, private dialog: MatDialog) {}
+  constructor(private serviceFood: FoodServiceService, private serviceCategory: CategoryServiceService, private dialog: MatDialog) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.serviceFood.listAllFood().subscribe(food => {
       this.food = food
     });
     this.serviceCategory.listAllCategory().subscribe(category => {
       this.category = category
-      console.log(category)
+      this.newCategories.map(category => {
+        this.newCategories = category
+      })
+      // console.log(this.category)
     })
-    // console.log(this.category)
+
   }
 
   openDialog() {
@@ -39,9 +41,5 @@ export class AppComponent {
     })
   }
 
-  editarFood(food: food) {
-    // console.log(food)
-    this.dialog.open(AdicionarFoodComponent)
-  }
 
 }

@@ -3,7 +3,9 @@ h1 {
 }
 
 .content {
+    width: auto;
     align-items: center;
+    overflow-y: scroll;
 }
 
 form {
