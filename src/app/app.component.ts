@@ -1,3 +1,4 @@
+import { CreatedCategoryComponent } from './Cardapio/category/created-category/created-category.component';
 import { category } from './Cardapio/category/category-model.model';
 import { CategoryServiceService } from './Cardapio/category/category-service.service';
 import { Component, Pipe } from '@angular/core';
@@ -36,6 +37,14 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(AdicionarFoodComponent, {
+      width: '60%',
+      height: 'auto'
+    })
+  }
+
+
+  public createCategory(){
+    this.dialog.open(CreatedCategoryComponent, {
       width: '60%',
       height: 'auto'
     })

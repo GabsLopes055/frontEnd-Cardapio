@@ -1,0 +1,13 @@
+.header>h1 {
+    text-align: center;
+}
+
+form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    padding: 10px;
+}

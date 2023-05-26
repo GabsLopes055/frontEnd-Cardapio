@@ -1,11 +1,10 @@
-import { Observable, map } from 'rxjs';
-import { CategoryServiceService } from './../../category/category-service.service';
-import { category } from './../../category/category-model.model';
-import { group } from '@angular/animations';
-import { Component, Pipe } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl, FormArray } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FoodServiceService } from 'src/app/Cardapio/food/food-service.service';
+
+import { category } from './../../category/category-model.model';
+import { CategoryServiceService } from './../../category/category-service.service';
 
 @Component({
   selector: 'app-adicionar-food',

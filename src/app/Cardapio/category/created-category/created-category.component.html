@@ -1,1 +1,22 @@
-<p>created-category works!</p>
+<div class="header">
+    <h1 mat-dialog-title>Adicionar</h1>
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    <form [formGroup]="createCategoryForm">
+        <h3>Informe um nome para a categoria:</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Nome da Categoria</mat-label>
+            <input matInput placeholder="Informe uma categoria" formControlName="category" required>
+            <mat-icon matSuffix>category</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+    <div class="footer">
+        <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+        <button mat-button [disabled]="!createCategoryForm.valid" (click)="createCategory()" color="primary">Adicionar</button>
+    </div>
+</mat-dialog-actions>
