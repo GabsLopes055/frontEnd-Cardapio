@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MainFoodComponent } from './Cardapio/food/main-food/main-food.component';
 import { CreatedCategoryComponent } from './Cardapio/category/created-category/created-category.component';
 import {MatSelectModule} from '@angular/material/select';
+import { UpdateFoodComponent } from './Cardapio/food/update-food/update-food.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
     AppComponent,
     MainFoodComponent,
     CreatedCategoryComponent,
+    UpdateFoodComponent,
   ],
   imports: [
     BrowserModule,

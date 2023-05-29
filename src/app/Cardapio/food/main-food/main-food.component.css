@@ -31,14 +31,17 @@
 
 mat-card {
     margin: 15px;
-    padding: 0;
     text-align: center;
     align-items: center;
 }
 
 mat-card>img {
-    /* margin: 30px; */
+    margin: 10px;
     width: 300px;
     height: 300px;
     border-radius: 15px;
+}
+
+mat-card-title {
+    margin-bottom: 8px;
 }

@@ -1,0 +1,47 @@
+<div class="header">
+    <h1 mat-dialog-title>Editar</h1>
+</div>
+<mat-divider></mat-divider>
+<div class="content">
+    <form [formGroup]="formUpdate">
+        <h3>Informe um titulo para o produto</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="Informe um titulo" formControlName="title" required>
+            <mat-icon matSuffix>toc</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+        <h3>Informe o preço</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Preço</mat-label>
+            <input type="number" matInput placeholder="Preço" formControlName="price" required>
+            <mat-icon matSuffix>payments</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+        <h3>Link para imagem</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Imagem</mat-label>
+            <input matInput placeholder="Imagem" formControlName="image" required>
+            <mat-icon matSuffix>image</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+        <h3>Selecione a Categoria</h3>
+        <mat-form-field appearance="outline" required>
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="cdCategory" required [(value)]="this.categoryFood">
+                <mat-option *ngFor="let categories of category" [value]="categories.cdCategory">
+                    {{categories.category}}
+                </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>category</mat-icon>
+            <mat-error disabled="!valid.error">O campo é obrigatório</mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+    <div class="footer">
+        <button mat-stroked-button color="warn" mat-dialog-close>Cancelar</button>
+        <button mat-raised-button color="primary" [disabled]="!formUpdate.valid">Salvar</button>
+    </div>
+</mat-dialog-actions>

@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+.content {
+    width: auto;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    justify-content: center;
+    padding-top: 6px;
+}

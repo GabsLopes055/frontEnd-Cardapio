@@ -1,3 +1,4 @@
+import { UpdateFoodComponent } from './../update-food/update-food.component';
 import { AdicionarFoodComponent } from './../created-food/adicionar-food.component';
 import { MatDialog } from '@angular/material/dialog';
 import { category } from './../../category/category-model.model';
@@ -5,8 +6,6 @@ import { CategoryServiceService } from './../../category/category-service.servic
 import { FoodServiceService } from 'src/app/Cardapio/food/food-service.service';
 import { food } from './../Foodmodel.model';
 import { Component } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-main-food',
@@ -17,7 +16,7 @@ export class MainFoodComponent {
 
   constructor(private serviceCategory: CategoryServiceService, private serviceFood: FoodServiceService, private dialog: MatDialog) { }
 
-  title = "Editar"
+  title: any;
 
   food!: food[];
   category!: any[];
@@ -31,15 +30,16 @@ export class MainFoodComponent {
     })
   }
 
-  public updateFood(food: food[], title: string){
+  public updateFood(food: any, category: any) {
     this.dialog.open(
-      AdicionarFoodComponent, {
-        width: '60%',
-        height: 'auto'
-      })
-      if(title == 'Editar') {
-        alert(title)
-      }
+      UpdateFoodComponent, {
+      width: '60%',
+      height: 'auto',
+      data: {
+        food: food,
+        category: category
+       }
+    })
   }
 
 

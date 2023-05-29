@@ -3,7 +3,7 @@
         <h1>{{categories.category}}</h1>
     </div>
     <div class="content">
-        <mat-card *ngFor="let food of categories.foods" (click)="updateFood(food, 'Editar')">
+        <mat-card *ngFor="let food of categories.foods" (click)="updateFood(food, categories.category)">
             <mat-card-header>
                 <mat-card-title>
                     {{ food.title }}
