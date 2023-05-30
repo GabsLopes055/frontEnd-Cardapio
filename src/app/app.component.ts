@@ -37,15 +37,15 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(AdicionarFoodComponent, {
-      width: '60%',
-      height: 'auto'
+      width: '100%',
+      height: '75%'
     })
   }
 
 
   public createCategory(){
     this.dialog.open(CreatedCategoryComponent, {
-      width: '60%',
+      width: '100%',
       height: 'auto'
     })
   }

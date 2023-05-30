@@ -33,12 +33,12 @@ export class MainFoodComponent {
   public updateFood(food: any, category: any) {
     this.dialog.open(
       UpdateFoodComponent, {
-      width: '60%',
-      height: 'auto',
+      width: '100%',
+      height: '75%',
       data: {
         food: food,
         category: category
-       }
+      }
     })
   }
 
