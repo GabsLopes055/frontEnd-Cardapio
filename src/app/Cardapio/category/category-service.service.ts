@@ -11,7 +11,7 @@ export class CategoryServiceService {
 
   constructor(private http: HttpClient, private message: MatSnackBar) { }
 
-  url = "http://localhost:8080/category"
+  url = "https://backend-cardapio-production.up.railway.app/category"
 
   public listAllCategory(): Observable<category[]> {
     return this.http.get<category[]>(this.url)

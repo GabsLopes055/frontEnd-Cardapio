@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class FoodServiceService {
 
-  url = 'http://localhost:8080/food';
+  url = 'https://backend-cardapio-production.up.railway.app/food';
 
   constructor(private http: HttpClient, private message: MatSnackBar) { }
 
