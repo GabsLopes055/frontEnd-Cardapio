@@ -6,6 +6,7 @@ import { CategoryServiceService } from './../../category/category-service.servic
 import { FoodServiceService } from 'src/app/Cardapio/food/food-service.service';
 import { food } from './../Foodmodel.model';
 import { Component } from '@angular/core';
+import { Dialog, DialogConfig, DialogModule } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-main-food',
@@ -30,17 +31,13 @@ export class MainFoodComponent {
     })
   }
 
-  public updateFood(food: any, category: any) {
+  public updateFood(food: food[]) {
     this.dialog.open(
       UpdateFoodComponent, {
       width: '100%',
-      height: '75%',
-      data: {
-        food: food,
-        category: category
-      }
+      height: 'auto',
+      data: { food: food }
     })
+
   }
-
-
 }

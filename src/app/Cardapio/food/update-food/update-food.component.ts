@@ -1,8 +1,7 @@
-import { map } from 'rxjs';
+import { DialogConfig, DialogModule } from '@angular/cdk/dialog';
+import { FoodServiceService } from 'src/app/Cardapio/food/food-service.service';
 import { food } from './../Foodmodel.model';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CategoryServiceService } from './../../category/category-service.service';
-import { category } from './../../category/category-model.model';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Inject, Pipe } from '@angular/core';
 
@@ -15,40 +14,34 @@ export class UpdateFoodComponent {
 
 
   formUpdate!: FormGroup;
-  category!: category[];
   foods: food[] = [];
-  categoryFood = '';
 
   constructor(
-    public serviceCategory: CategoryServiceService,
+    private dialog: MatDialog,
+    public serviceFood: FoodServiceService,
     public formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.formUpdate = this.formBuilder.group({
+      cdFood: this.formBuilder.control(Validators.required),
       title: this.formBuilder.control(Validators.required),
       price: this.formBuilder.control(Validators.required),
-      image: this.formBuilder.control(Validators.required),
-      cdCategory: this.formBuilder.control(Validators.required)
+      image: this.formBuilder.control(Validators.required)
     })
-
-    this.categoryFood = data.category
-    console.log(this.categoryFood)
 
     this.formUpdate.get('title')?.setValue(data.food.title)
     this.formUpdate.get('price')?.setValue(data.food.price)
     this.formUpdate.get('image')?.setValue(data.food.image)
-    this.formUpdate.get('cdCategory')?.setValue(this.categoryFood)
-    console.log(this.formUpdate.get('cdCategory'))
-
+    this.formUpdate.get('cdFood')?.setValue(data.food.cdFood)
   }
 
-  ngOnInit(): void {
-    this.listCategory()
-  }
 
-  listCategory() {
-    return this.serviceCategory.listAllCategory().subscribe(category => {
-      this.category = category
+  public updateFood() {
+    console.log(this.formUpdate.value)
+    this.serviceFood.updateFood(this.formUpdate.value).subscribe(() => {
+      this.dialog.closeAll()
+      window.location.reload()
+      this.serviceFood.showMessage('Comida Editada !')
     })
   }
 

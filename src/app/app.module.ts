@@ -21,7 +21,7 @@ import { AdicionarFoodComponent } from './Cardapio/food/created-food/adicionar-f
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MainFoodComponent } from './Cardapio/food/main-food/main-food.component';
 import { CreatedCategoryComponent } from './Cardapio/category/created-category/created-category.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { UpdateFoodComponent } from './Cardapio/food/update-food/update-food.component';
 
 

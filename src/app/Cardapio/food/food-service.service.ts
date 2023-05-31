@@ -33,6 +33,13 @@ export class FoodServiceService {
     )
   }
 
+  public updateFood(food: food) {
+    return this.http.put<food>(`${this.url}/${food.cdFood}`, food).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    )
+  }
+
   public listAllFood(): Observable<food[]> {
     return this.http.get<any>(this.url);
   }

@@ -21,20 +21,12 @@ export class CreatedCategoryComponent {
   }
 
 
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-
-  }
-
   public createCategory() {
     this.serviceCategory.addCategory(this.createCategoryForm.value).subscribe(() => {
       this.createCategoryForm.reset();
       this.serviceCategory.showMessage('Categoria Cadastada')
       window.location.reload()
     })
-    console.log(this.createCategoryForm.value)
   }
 
 }

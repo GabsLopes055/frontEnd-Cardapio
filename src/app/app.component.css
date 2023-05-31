@@ -55,6 +55,13 @@ mat-sidenav {
     width: 80%;
 }
 
+
+/*
+mat-list {
+    display: flex;
+    flex-direction: row;
+} */
+
 a {
     text-decoration: none;
     color: black;

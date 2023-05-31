@@ -47,12 +47,4 @@ export class AdicionarFoodComponent {
       this.serviceFood.showMessage('Criado com Sucesso')
     })
   }
-
-
-  cancelar() {
-    this.dialog.closeAll()
-  }
-
-
-
 }
